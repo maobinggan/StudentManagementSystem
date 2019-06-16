@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29001.49
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "教务管理系统", "教务管理系统\教务管理系统.csproj", "{381D0747-2AF7-409D-8182-071A1BB4355F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{381D0747-2AF7-409D-8182-071A1BB4355F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381D0747-2AF7-409D-8182-071A1BB4355F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381D0747-2AF7-409D-8182-071A1BB4355F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381D0747-2AF7-409D-8182-071A1BB4355F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA9CD0B3-8F70-48CD-8CB1-C48D208E039B}
+	EndGlobalSection
+EndGlobal
