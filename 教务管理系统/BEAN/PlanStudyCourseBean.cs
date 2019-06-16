@@ -9,19 +9,24 @@ namespace 教务管理系统.BEAN
     class PlanStudyCourseBean
     {
         public int Id { get; set; }
-        public int courseId { get; set; }
-        public int semesterId { get; set; }
-        public int studentId { get; set; }
+        public int Course_Id { get; set; }
+        public int Semester_Id { get; set; }
+        public int Student_Id { get; set; }
 
         public PlanStudyCourseBean()
         {
         }
 
-        public PlanStudyCourseBean(int courseId, int semesterId, int studentId)
+        public PlanStudyCourseBean(int id)
         {
-            this.courseId = courseId;
-            this.semesterId = semesterId;
-            this.studentId = studentId;
+            Id = id;
+        }
+
+        public PlanStudyCourseBean(int course_Id, int semester_Id, int student_Id)
+        {
+            this.Course_Id = course_Id;
+            this.Semester_Id = semester_Id;
+            this.Student_Id = student_Id;
         }
 
     }

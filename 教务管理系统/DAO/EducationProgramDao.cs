@@ -5,41 +5,47 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using 教务管理系统.BEAN;
 
 namespace 教务管理系统.DAO
 {
-    class StudentDao : BaseDao<StudentBean>
+    class EducationProgramDao : BaseDao<EducationProgramBean>
     {
-        /// <summary>
-        /// 查：根据学号
-        /// </summary>
-        /// <param name="sCode"></param>
-        /// <returns></returns>
-        public StudentBean FindBySCode(string sCode)
+        public override bool Add(EducationProgramBean bean)
         {
-            StudentBean studentBean = null;
+            throw new NotImplementedException();
+            return false;
+        }
+        /// <summary>
+        /// 查：根据major_id
+        /// </summary>
+        /// <param name="bean"></param>
+        /// <returns></returns>
+        public EducationProgramBean FindByMajorId(EducationProgramBean bean)
+        {
+            EducationProgramBean educationProgram = null;
             try
             {
                 //连接数据库
                 conn = new SqlConnection(connStr); //数据库连接对象
                 conn.Open();
                 //SQL
-                string sqlStr = "SELECT * FROM [student] WHERE sCode=@sCode";//占位符
+                String sqlStr = "SELECT * FROM [education_program] WHERE major_id=@major_id ";
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                cmd.Parameters.AddWithValue("@sCode", sCode);
+                cmd.Parameters.AddWithValue("@major_id", bean.Major_id);
                 DataTable dt = new DataTable();
                 new SqlDataAdapter(cmd).Fill(dt);
+                //cmd.ExecuteNonQuery();
+
                 //dataTable转模型
-                studentBean = ConvertToModel(dt);
-                return studentBean;
+                educationProgram = ConvertToModel(dt);
+                return educationProgram;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("【Execption】" + ex.Message.ToString());
+                Console.WriteLine("【Exception】" + ex.Message.ToString());
                 //MessageBox.Show(ex.Message.ToString());
-                return studentBean;
+                return educationProgram;
             }
             finally
             {
@@ -48,34 +54,31 @@ namespace 教务管理系统.DAO
                 conn.Dispose();
             }
         }
-        /// <summary>
-        /// 查：根据Id
-        /// </summary>
-        /// <param name="sCode"></param>
-        /// <returns></returns>
-        public override StudentBean FindById(StudentBean bean)
+        public override EducationProgramBean FindById(EducationProgramBean bean)
         {
-            StudentBean studentBean = null;
+            EducationProgramBean educationProgram = null;
             try
             {
                 //连接数据库
                 conn = new SqlConnection(connStr); //数据库连接对象
                 conn.Open();
                 //SQL
-                string sqlStr = "SELECT * FROM [student] WHERE id=@id";//占位符
+                String sqlStr = "SELECT * FROM [education_program] WHERE id=@id ";
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
                 cmd.Parameters.AddWithValue("@id", bean.Id);
                 DataTable dt = new DataTable();
                 new SqlDataAdapter(cmd).Fill(dt);
+                //cmd.ExecuteNonQuery();
+
                 //dataTable转模型
-                studentBean = ConvertToModel(dt);
-                return studentBean;
+                educationProgram = ConvertToModel(dt);
+                return educationProgram;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("【Execption】" + ex.Message.ToString());
+                Console.WriteLine(ex.Message.ToString());
                 //MessageBox.Show(ex.Message.ToString());
-                return studentBean;
+                return educationProgram;
             }
             finally
             {
@@ -83,11 +86,6 @@ namespace 教务管理系统.DAO
                 conn.Close();
                 conn.Dispose();
             }
-        }
-        public override bool Add(StudentBean bean)
-        {
-            //throw new NotImplementedException();
-            return false;
         }
     }
 }

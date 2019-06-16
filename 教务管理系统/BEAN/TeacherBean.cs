@@ -18,6 +18,22 @@ namespace 教务管理系统.BEAN
         public string Introduction { get; set; }
         public string Photo { get; set; }
 
+        public TeacherBean(int id)
+        {
+            Id = id;
+        }
+
+        public TeacherBean(string code, string name, string gender, string degree, string title, string introduction, string photo)
+        {
+            TCode = code;
+            Name = name;
+            Gender = gender;
+            Degree = degree;
+            Title = title;
+            Introduction = introduction;
+            Photo = photo;
+        }
+
         public TeacherBean()
         {
         }

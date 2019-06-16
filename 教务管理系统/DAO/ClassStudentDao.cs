@@ -96,7 +96,7 @@ namespace 教务管理系统.DAO
         /// </summary>
         /// <param name="bean"></param>
         /// <returns></returns>
-        public ClassStudentBean FindById(ClassStudentBean bean)
+        public override ClassStudentBean FindById(ClassStudentBean bean)
         {
             ClassStudentBean classStudent = null;
             try
@@ -130,6 +130,8 @@ namespace 教务管理系统.DAO
             }
 
         }
+
+
         /// <summary>
         /// 查多条记录：根据Course_Class
         /// </summary>

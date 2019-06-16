@@ -27,8 +27,8 @@ namespace 教务管理系统.DAO
                 //SQL
                 String sqlStr = "SELECT * FROM [course_class] WHERE course_id=@course_id AND teacher_id=@teacher_id";
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                cmd.Parameters.AddWithValue("@course_id", bean.CourseId);
-                cmd.Parameters.AddWithValue("@teacher_id", bean.TeacherId);
+                cmd.Parameters.AddWithValue("@course_id", bean.Course_Id);
+                cmd.Parameters.AddWithValue("@teacher_id", bean.Teacher_Id);
                 DataTable dt = new DataTable();
                 new SqlDataAdapter(cmd).Fill(dt);
                 //cmd.ExecuteNonQuery();
@@ -55,7 +55,7 @@ namespace 教务管理系统.DAO
         /// </summary>
         /// <param name="bean"></param>
         /// <returns></returns>
-        public CourseClassBean FindById(CourseClassBean bean)
+        public override CourseClassBean FindById(CourseClassBean bean)
         {
             CourseClassBean courseClass = null;
             try
@@ -103,10 +103,10 @@ namespace 教务管理系统.DAO
                 //SQL
                 String sqlStr = "INSERT INTO [course_class](course_id,semester_id,teacher_id,max_class_size) VALUES(@course_id,@semester_id,@teacher_id,@max_class_size)";
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                cmd.Parameters.AddWithValue("@course_id", bean.CourseId);
-                cmd.Parameters.AddWithValue("@semester_id", bean.SemesterId);
-                cmd.Parameters.AddWithValue("@teacher_id", bean.TeacherId);
-                cmd.Parameters.AddWithValue("@max_class_size", bean.MaxClassSize);
+                cmd.Parameters.AddWithValue("@course_id", bean.Course_Id);
+                cmd.Parameters.AddWithValue("@semester_id", bean.Semester_Id);
+                cmd.Parameters.AddWithValue("@teacher_id", bean.Teacher_Id);
+                cmd.Parameters.AddWithValue("@max_class_size", bean.Max_Class_Size);
                 cmd.ExecuteNonQuery();
                 return true;
             }

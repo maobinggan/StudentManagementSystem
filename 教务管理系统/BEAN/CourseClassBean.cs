@@ -12,10 +12,10 @@ namespace 教务管理系统.BEAN
     public class CourseClassBean
     {
         public int Id { get; set; }
-        public int SemesterId { get; set; }
-        public int CourseId { get; set; }
-        public int MaxClassSize { get; set; }
-        public int TeacherId { get; set; }
+        public int Semester_Id { get; set; }
+        public int Course_Id { get; set; }
+        public int Max_Class_Size { get; set; }
+        public int Teacher_Id { get; set; }
 
         public CourseClassBean() { }
 
@@ -24,12 +24,12 @@ namespace 教务管理系统.BEAN
             Id = id;
         }
 
-        public CourseClassBean(int semesterId, int courseId, int maxClassSize, int teacherId)
+        public CourseClassBean(int semester_Id, int course_Id, int max_Class_Size, int teacher_Id)
         {
-            SemesterId = semesterId;
-            CourseId = courseId;
-            MaxClassSize = maxClassSize;
-            TeacherId = teacherId;
+            Semester_Id = semester_Id;
+            Course_Id = course_Id;
+            Max_Class_Size = max_Class_Size;
+            Teacher_Id = teacher_Id;
         }
     }
 

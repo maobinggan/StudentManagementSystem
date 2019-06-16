@@ -14,15 +14,27 @@ namespace 教务管理系统.窗体
 {
     public partial class TeacherHome : Form
     {
+        /// <summary>
+        /// 当前登录的教师信息
+        /// </summary>
         TeacherBean teacher = null;
+
+        /// <summary>
+        /// 前一个窗体对象
+        /// </summary>
         Form preForm = null;
 
+        /// <summary>
+        /// 构造器
+        /// </summary>
+        /// <param name="teacher"></param>
+        /// <param name="preForm"></param>
         public TeacherHome(TeacherBean teacher, Form preForm)
         {
             InitializeComponent();
+            this.ControlBox = false;   // 设置不出现关闭按钮
             this.teacher = teacher;
             this.preForm = preForm;
-
             label1.Text = "[当前教师登录] 姓名:" + teacher.Name + " 教工编号:" + teacher.TCode;
         }
 
@@ -36,9 +48,24 @@ namespace 教务管理系统.窗体
             new OpenCourseForm(this.teacher).Show();
         }
 
+        /// <summary>
+        /// 点击进入成绩录入界面
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_inputScore_Click(object sender, EventArgs e)
         {
             new InputScoreForm(this.teacher).Show();
+        }
+
+        /// <summary>
+        /// 点击进入查看所有学生信息窗体
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_showAllStu_Click(object sender, EventArgs e)
+        {
+            new ShowEducationProgramForm().Show();
         }
 
         /// <summary>

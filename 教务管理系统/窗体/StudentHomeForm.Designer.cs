@@ -36,13 +36,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_myPlanCourse = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_allCourse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_myPlanCourse)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_preSelect
             // 
-            this.btn_preSelect.Location = new System.Drawing.Point(154, 50);
+            this.btn_preSelect.Location = new System.Drawing.Point(92, 99);
             this.btn_preSelect.Name = "btn_preSelect";
             this.btn_preSelect.Size = new System.Drawing.Size(75, 23);
             this.btn_preSelect.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             // btn_formalSelect
             // 
-            this.btn_formalSelect.Location = new System.Drawing.Point(501, 50);
+            this.btn_formalSelect.Location = new System.Drawing.Point(236, 99);
             this.btn_formalSelect.Name = "btn_formalSelect";
             this.btn_formalSelect.Size = new System.Drawing.Size(75, 23);
             this.btn_formalSelect.TabIndex = 1;
@@ -65,27 +66,27 @@
             this.dgv_allCourse.AllowUserToAddRows = false;
             this.dgv_allCourse.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_allCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_allCourse.Location = new System.Drawing.Point(95, 120);
+            this.dgv_allCourse.Location = new System.Drawing.Point(15, 177);
             this.dgv_allCourse.Name = "dgv_allCourse";
             this.dgv_allCourse.RowHeadersVisible = false;
             this.dgv_allCourse.RowTemplate.Height = 23;
-            this.dgv_allCourse.Size = new System.Drawing.Size(720, 149);
+            this.dgv_allCourse.Size = new System.Drawing.Size(837, 149);
             this.dgv_allCourse.TabIndex = 2;
             this.dgv_allCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContent_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.label1.Text = "[基本信息]";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 105);
+            this.label2.Location = new System.Drawing.Point(13, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(191, 12);
             this.label2.TabIndex = 4;
@@ -94,7 +95,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(93, 289);
+            this.label3.Location = new System.Drawing.Point(13, 358);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 12);
             this.label3.TabIndex = 5;
@@ -105,11 +106,11 @@
             this.dgv_myPlanCourse.AllowUserToAddRows = false;
             this.dgv_myPlanCourse.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_myPlanCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_myPlanCourse.Location = new System.Drawing.Point(95, 304);
+            this.dgv_myPlanCourse.Location = new System.Drawing.Point(15, 383);
             this.dgv_myPlanCourse.Name = "dgv_myPlanCourse";
             this.dgv_myPlanCourse.RowHeadersVisible = false;
             this.dgv_myPlanCourse.RowTemplate.Height = 23;
-            this.dgv_myPlanCourse.Size = new System.Drawing.Size(720, 251);
+            this.dgv_myPlanCourse.Size = new System.Drawing.Size(837, 251);
             this.dgv_myPlanCourse.TabIndex = 6;
             // 
             // button1
@@ -122,11 +123,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // SelectCourseForm
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "[专业信息]";
+            // 
+            // StudentHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 610);
+            this.ClientSize = new System.Drawing.Size(909, 667);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgv_myPlanCourse);
             this.Controls.Add(this.label3);
@@ -135,7 +146,8 @@
             this.Controls.Add(this.dgv_allCourse);
             this.Controls.Add(this.btn_formalSelect);
             this.Controls.Add(this.btn_preSelect);
-            this.Name = "SelectCourseForm";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "StudentHomeForm";
             this.Text = "SelectCourse";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_allCourse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_myPlanCourse)).EndInit();
@@ -154,5 +166,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgv_myPlanCourse;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label4;
     }
 }

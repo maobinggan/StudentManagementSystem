@@ -31,6 +31,13 @@ namespace 教务管理系统.DAO
         public abstract bool Add(T bean);
 
         /// <summary>
+        /// 查：通过Id
+        /// </summary>
+        /// <param name="bean"></param>
+        /// <returns></returns>
+        public abstract T FindById(T bean);
+
+        /// <summary>
         /// 查 (DataSet)
         /// </summary>
         /// <param name="sqlStr"></param>

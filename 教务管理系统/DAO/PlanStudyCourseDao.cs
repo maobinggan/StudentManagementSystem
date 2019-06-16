@@ -27,9 +27,9 @@ namespace 教务管理系统.DAO
                 //SQL
                 String sqlStr = "INSERT INTO [plan_study_course](course_id,semester_id,student_id) VALUES(@course_id,@semester_id,@student_id)";
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                cmd.Parameters.AddWithValue("@course_id", bean.courseId);
-                cmd.Parameters.AddWithValue("@semester_id", bean.semesterId);
-                cmd.Parameters.AddWithValue("@student_id", bean.studentId);
+                cmd.Parameters.AddWithValue("@course_id", bean.Course_Id);
+                cmd.Parameters.AddWithValue("@semester_id", bean.Semester_Id);
+                cmd.Parameters.AddWithValue("@student_id", bean.Student_Id);
                 cmd.ExecuteNonQuery();
                 return true;
             }
@@ -48,6 +48,40 @@ namespace 教务管理系统.DAO
 
         }
 
+        public override PlanStudyCourseBean FindById(PlanStudyCourseBean bean)
+        {
+            PlanStudyCourseBean planStudyCourse = null;
+            try
+            {
+                //连接数据库
+                conn = new SqlConnection(connStr); //数据库连接对象
+                conn.Open();
+                //SQL
+                String sqlStr = "SELECT * FROM [plan_study_course] WHERE id=@id";
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                cmd.Parameters.AddWithValue("@id", bean.Id);
+                DataTable dt = new DataTable();
+                new SqlDataAdapter(cmd).Fill(dt);
+                //cmd.ExecuteNonQuery();
+
+                //dataTable转模型
+                planStudyCourse = ConvertToModel(dt);
+                return planStudyCourse;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message.ToString());
+                //MessageBox.Show(ex.Message.ToString());
+                return planStudyCourse;
+            }
+            finally
+            {
+                //关闭连接
+                conn.Close();
+                conn.Dispose();
+            }
+        }
+
         /// <summary>
         /// 查：根据StuId CourId SemsId
         /// </summary>
@@ -64,9 +98,9 @@ namespace 教务管理系统.DAO
                 //SQL
                 String sqlStr = "SELECT * FROM [plan_study_course] WHERE course_id=@course_id AND semester_id=@semester_id AND student_id=@student_id";
                 SqlCommand cmd = new SqlCommand(sqlStr, conn);
-                cmd.Parameters.AddWithValue("@course_id", bean.courseId);
-                cmd.Parameters.AddWithValue("@semester_id", bean.semesterId);
-                cmd.Parameters.AddWithValue("@student_id", bean.studentId);
+                cmd.Parameters.AddWithValue("@course_id", bean.Course_Id);
+                cmd.Parameters.AddWithValue("@semester_id", bean.Semester_Id);
+                cmd.Parameters.AddWithValue("@student_id", bean.Student_Id);
                 DataTable dt = new DataTable();
                 new SqlDataAdapter(cmd).Fill(dt);
                 //cmd.ExecuteNonQuery();

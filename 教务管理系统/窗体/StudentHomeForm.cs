@@ -18,20 +18,45 @@ namespace 教务管理系统.界面
         /// 当前登录的学生信息
         /// </summary>
         public StudentBean student;
-        public Form preForm ;
+
+        /// <summary>
+        /// 当前登录的班级信息
+        /// </summary>
+        public ClassBean classBean;
+
+        /// <summary>
+        /// 当前登录的专业(方向)信息
+        /// </summary>
+        public MajorBean major;
+
+        /// <summary>
+        /// 当前登录的培养方案信息
+        /// </summary>
+        public EducationProgramBean educationProgram;
+
+
+        /// <summary>
+        /// 前一个窗体对象
+        /// </summary>
+        public Form preForm;
 
         /// <summary>
         /// 构造器
         /// </summary>
         /// <param name="student"></param>
-        public StudentHomeForm(StudentBean student,Form preForm)
+        public StudentHomeForm(StudentBean student, Form preForm)
         {
             InitializeComponent();
-
+            this.ControlBox = false;   // 设置不出现关闭按钮
 
             this.student = student;
             this.preForm = preForm;
-            label1.Text = "[当前学生登录] 学生姓名:" + student.Name + " 学号:" + student.SCode;
+            this.classBean = new ClassDao().FindById(new ClassBean(student.Class_Id));
+            this.major = new MajorDao().FindById(new MajorBean(classBean.Major_id));
+            this.educationProgram = new EducationProgramDao().FindByMajorId(new EducationProgramBean(null, null, null, 0, null, 0, 0, classBean.Major_id));
+
+            label1.Text = "[姓  名]:" + student.Name + "  [学号]:" + student.SCode;
+            label4.Text = "[专业名]:" + major.Name + " [班级名]:" + classBean.Name + " [培养方案名称]:" + educationProgram.Name;
 
             //ShowAllPlanCourse();
             //ShowMyPlanCourse();
@@ -43,7 +68,7 @@ namespace 教务管理系统.界面
         /// </summary>
         private void ShowAllPlanCourse()
         {
-            String sqlStr = "SELECT [id],[number] AS '课程编号',[cname] AS '课程名称',[Score] AS'学分',[Tlhour] AS '每周学时' FROM [course]";
+            String sqlStr = "SELECT [course].id AS '课程ID',[course].Number AS '课程编号',[cname] AS '课程名称',[Score] AS'学分',[Tlhour] AS '周学时' ,[category_course].Name AS '课程类别' ,[education_program].Name AS '培养方案'FROM[course],[curriculum],[category_course],[education_program] WHERE [curriculum].course_id = [course].id AND [curriculum].Category_id=[category_course].id AND [curriculum].Program_id= [education_program].id ORDER BY [course].Number";
             DataTable dataTable = BaseDao<object>.FindDataTable(sqlStr);
             if (dataTable != null)
             {
@@ -53,17 +78,17 @@ namespace 教务管理系统.界面
             }
             //添加一列按钮，按钮的行数取决于DataGridView的行数
             DataGridViewButtonColumn col_Btn = new DataGridViewButtonColumn();
-            col_Btn.Name = "colBtn_preSelect";                            //列名
-            col_Btn.HeaderText = "操作";                        //该列表头所显示的文字
-            col_Btn.DefaultCellStyle.NullValue = "预选";   //按钮上显示的文字
-            this.dgv_allCourse.Columns.Add(col_Btn);            //添加列
+            col_Btn.Name = "colBtn_preSelect";                          //列名
+            col_Btn.HeaderText = "操作";                                //该列表头所显示的文字
+            col_Btn.DefaultCellStyle.NullValue = "预选";                //按钮上显示的文字
+            this.dgv_allCourse.Columns.Add(col_Btn);                    //添加列
         }
         /// <summary>
         /// 显示我已选的预选课程
         /// </summary>
         private void ShowMyPlanCourse()
         {
-            String sqlStr = "SELECT [student].[scode]AS '学生学号', [student].[Name]AS '学生姓名',[course].[number]AS '课程编号',[course].[Cname]AS '课程名',[course].[score] AS '学分',[semester].[Name] AS '学期信息' FROM [course],[student],[semester],[plan_study_course]  WHERE [student].[id]=[plan_study_course].[Student_id] AND  [course].[id]=[plan_study_course].[course_id] AND[semester].[id]=[plan_study_course].[Semester_id] AND [plan_study_course].[Student_id] =" + student.Id;
+            String sqlStr = "SELECT [student].[scode]AS '学生学号', [student].[Name]AS '学生姓名',[course].[number]AS '课程编号',[course].[Cname]AS '课程名',[course].[score] AS '学分',[semester].[Name] AS '学期信息',[category_course].Name AS '课程类别' ,[education_program].Name AS '培养方案' FROM[course],[student],[semester],[plan_study_course],[curriculum],[category_course],[education_program] WHERE[student].[id]=[plan_study_course].[Student_id] AND[course].[id]=[plan_study_course].[course_id] AND[semester].[id]=[plan_study_course].[Semester_id] AND[curriculum].course_id = [course].id AND[curriculum].Category_id=[category_course].id AND[curriculum].Program_id= [education_program].id AND[plan_study_course].[Student_id] = " + student.Id+ " ORDER BY [course].Number";
             DataTable dataTable = BaseDao<object>.FindDataTable(sqlStr);
             if (dataTable != null)
             {
@@ -83,8 +108,15 @@ namespace 教务管理系统.界面
             if (dgv_allCourse.Columns[e.ColumnIndex].Name == "colBtn_preSelect")
             {//判断列名，点击的列是预选按钮的列
 
-                //获取被选中行的首列的数据
+                //获取被选中行的数据
                 int courseId = (int)dgv_allCourse.Rows[e.RowIndex].Cells[0].Value;
+                string programName = dgv_allCourse.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                if (programName.Equals(educationProgram.Name) == false)
+                {//只允许选择与自己班级所在的培养方案相同的课程
+                    MessageBox.Show("选课失败! 该课程的培养方案与您所在班级的培养方案不相同!");
+                    return;
+                }
 
                 //查：表[PlanStudyCourseDao]
                 PlanStudyCourseBean planStudyCourse = new PlanStudyCourseBean(courseId, 3, student.Id);
@@ -160,7 +192,7 @@ namespace 教务管理系统.界面
             this.dgv_allCourse.Columns.Add(col_Btn);                  //添加列
         }
         /// <summary>
-        /// 正选
+        /// 点击DataGridView中的正选按钮
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -169,12 +201,16 @@ namespace 教务管理系统.界面
             //清除之前的按钮列
             this.dgv_allCourse.DataSource = null;
             this.dgv_allCourse.Columns.Clear();
-            label2.Text = "已开设的课程：";
+            label2.Text = "已正式开班的课程：";
             label3.Text = "我已正选的课程：";
             ShowAllFormalCourse();
             ShowMyFormalCourse();
         }
-
+        /// <summary>
+        /// 点击DataGridView中的预选按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_preSelect_Click(object sender, EventArgs e)
         {
             //清除之前的按钮列
@@ -197,5 +233,7 @@ namespace 教务管理系统.界面
             this.Close();
             preForm.Show();
         }
+
+
     }
 }
