@@ -56,8 +56,8 @@ namespace 教务管理系统.界面
             this.educationProgram = new EducationProgramDao().FindByMajorId(new EducationProgramBean(null, null, null, 0, null, 0, 0, classBean.Major_id));
 
             label1.Text = "[姓  名]:" + student.Name + "  [学号]:" + student.SCode;
-            label4.Text = "[专业名]:" + major.Name + " [班级名]:" + classBean.Name + " [培养方案名称]:" + educationProgram.Name;
-
+            label4.Text = "[专业名]:" + major.Name + " [班级名]:" + classBean.Name;
+            label5.Text = "[培养方案]:" + educationProgram.Name + " [培养目标]" + educationProgram.Objective + " [规格要求]" + educationProgram.Specification + " [学制]" + educationProgram.Duration + " [授予学位]" + educationProgram.Degree + " [毕业学分要求]" + educationProgram.Min_credit + " [制定年份]" + educationProgram.Publish_year;
             //ShowAllPlanCourse();
             //ShowMyPlanCourse();
 
@@ -88,7 +88,7 @@ namespace 教务管理系统.界面
         /// </summary>
         private void ShowMyPlanCourse()
         {
-            String sqlStr = "SELECT [student].[scode]AS '学生学号', [student].[Name]AS '学生姓名',[course].[number]AS '课程编号',[course].[Cname]AS '课程名',[course].[score] AS '学分',[semester].[Name] AS '学期信息',[category_course].Name AS '课程类别' ,[education_program].Name AS '培养方案' FROM[course],[student],[semester],[plan_study_course],[curriculum],[category_course],[education_program] WHERE[student].[id]=[plan_study_course].[Student_id] AND[course].[id]=[plan_study_course].[course_id] AND[semester].[id]=[plan_study_course].[Semester_id] AND[curriculum].course_id = [course].id AND[curriculum].Category_id=[category_course].id AND[curriculum].Program_id= [education_program].id AND[plan_study_course].[Student_id] = " + student.Id+ " ORDER BY [course].Number";
+            String sqlStr = "SELECT [student].[scode]AS '学生学号', [student].[Name]AS '学生姓名',[course].[number]AS '课程编号',[course].[Cname]AS '课程名',[course].[score] AS '学分',[semester].[Name] AS '学期信息',[category_course].Name AS '课程类别' ,[education_program].Name AS '培养方案' FROM[course],[student],[semester],[plan_study_course],[curriculum],[category_course],[education_program] WHERE[student].[id]=[plan_study_course].[Student_id] AND[course].[id]=[plan_study_course].[course_id] AND[semester].[id]=[plan_study_course].[Semester_id] AND[curriculum].course_id = [course].id AND[curriculum].Category_id=[category_course].id AND[curriculum].Program_id= [education_program].id AND[plan_study_course].[Student_id] = " + student.Id + " ORDER BY [course].Number";
             DataTable dataTable = BaseDao<object>.FindDataTable(sqlStr);
             if (dataTable != null)
             {

@@ -42,14 +42,14 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(658, 199);
+            this.dataGridView1.Size = new System.Drawing.Size(1201, 281);
             this.dataGridView1.TabIndex = 0;
             // 
             // ShowEducationProgramForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 263);
+            this.ClientSize = new System.Drawing.Size(1268, 348);
             this.Controls.Add(this.dataGridView1);
             this.Name = "ShowEducationProgramForm";
             this.Text = "ShowEducationProgramForm";
