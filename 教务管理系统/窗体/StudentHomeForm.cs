@@ -109,8 +109,8 @@ namespace 教务管理系统.界面
             {//判断列名，点击的列是预选按钮的列
 
                 //获取被选中行的数据
-                int courseId = (int)dgv_allCourse.Rows[e.RowIndex].Cells[0].Value;
-                string programName = dgv_allCourse.Rows[e.RowIndex].Cells[6].Value.ToString();
+                int courseId = (int)dgv_allCourse.Rows[e.RowIndex].Cells[0].Value;              //首列的数据
+                string programName = dgv_allCourse.Rows[e.RowIndex].Cells[6].Value.ToString();  //第7列的数据
 
                 if (programName.Equals(educationProgram.Name) == false)
                 {//只允许选择与自己班级所在的培养方案相同的课程

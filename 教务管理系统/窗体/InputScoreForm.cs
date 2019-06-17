@@ -23,6 +23,9 @@ namespace 教务管理系统.窗体
             Show();
         }
 
+        /// <summary>
+        /// 展示datagridview
+        /// </summary>
         void Show()
         {
             string sqlStr = "SELECT [course_class].[id] AS'开班ID',[course].[Number] AS'课程编号',[course].[Cname] AS '课程名称',[teacher].[Name] AS '任课教师' FROM [teacher],[course_class],[course] WHERE[teacher].[Id] =[course_class].[Teacher_id] AND[course].[Id] =[course_class].[course_id] AND [teacher].[Id]=" + teacher.Id;
@@ -40,6 +43,11 @@ namespace 教务管理系统.窗体
             this.dataGridView1.Columns.Add(col_Btn);          //添加列
         }
 
+        /// <summary>
+        ///  监听DataGridView列按钮的点击事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataGridViewCellContent_Click(object sender, DataGridViewCellEventArgs e)
         {
             if (dataGridView1.Columns[e.ColumnIndex].Name == "btnChooseCourse")

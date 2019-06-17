@@ -29,6 +29,11 @@ namespace 教务管理系统.界面
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 当点击学生登录按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_stuLogin_Click(object sender, EventArgs e)
         {
             //学号检查
@@ -45,6 +50,11 @@ namespace 教务管理系统.界面
 
         }
 
+        /// <summary>
+        /// 当点击教师登录按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Btn_teacherLogin_Click(object sender, EventArgs e)
         {
             //教师工号

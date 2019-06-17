@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -22,8 +23,10 @@ namespace 教务管理系统.DAO
     */
     abstract class BaseDao<T> where T : new()
     {
-        protected static String connStr = "server=127.0.0.1;uid=sa;pwd=123456;database=StudentManagementSystem";
+        //从app.config文件中读取连接字符串："server=127.0.0.1;uid=sa;pwd=123456;database=StudentManagementSystem";
+        protected static String connStr = ConfigurationManager.ConnectionStrings["connStr"].ToString();
         protected static SqlConnection conn = null;
+
         /// <summary>
         /// 增
         /// </summary>
@@ -45,7 +48,7 @@ namespace 教务管理系统.DAO
         public static DataTable FindDataTable(String sqlStr)
         {
             DataTable dataTable = null;
-            try //正确的时候执行的内容
+            try
             {
                 //连接数据库
                 conn = new SqlConnection(connStr); //数据库连接对象
@@ -64,7 +67,7 @@ namespace 教务管理系统.DAO
             }
             finally
             {
-                //关闭连接
+                //无论是否异常都关闭连接
                 conn.Close();
                 conn.Dispose();
             }

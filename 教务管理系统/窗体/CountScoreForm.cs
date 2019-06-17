@@ -104,22 +104,15 @@ namespace 教务管理系统.窗体
             //this.dataGridView1.Columns.Add(col_Btn);          //添加列
         }
 
-        private void DataGridViewCellContent_Click(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btnInput")
-            {
-                //int courseClassId = (int)dataGridView1.Rows[e.RowIndex].Cells[1].Value;
-                //CourseClassBean courseClass = new CourseClassDao().FindById(new CourseClassBean(courseClassId));
-                //if (courseClass != null)
-                //{
-                //    new CountScoreForm(courseClass).Show();
-                //}
-            }
-        }
 
+        /// <summary>
+        /// 监听单元格事件：值修改
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DataGridViewCell_ValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            int classStudentId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());//获取焦点触发行的第一个值
+            int classStudentId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());//获取焦点触发行的第1个值
             ClassStudentDao DAO = new ClassStudentDao();
             ClassStudentBean classStudent = DAO.FindById(new ClassStudentBean(classStudentId));
             if (e.ColumnIndex < 7 || e.ColumnIndex > 10) { return; }
