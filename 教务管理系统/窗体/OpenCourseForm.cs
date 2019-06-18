@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCWin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using 教务管理系统.DAO;
 
 namespace 教务管理系统.窗体
 {
-    public partial class OpenCourseForm : Form
+    public partial class OpenCourseForm : Skin_Mac
     {
         TeacherBean teacher = null;
         public OpenCourseForm(TeacherBean teacher)
@@ -34,7 +35,7 @@ namespace 教务管理系统.窗体
             if (dataTable != null)
             {
                 //将数据集合的首张表绑定到dataGridView2的数据源
-                this.dataGridView2.DataSource = dataTable;
+                this.skinDataGridView2.DataSource = dataTable;
             }
         }
 
@@ -47,15 +48,15 @@ namespace 教务管理系统.窗体
             DataTable dataTable = BaseDao<object>.FindDataTable(sqlStr);
             if (dataTable != null)
             {
-                //将数据集合的首张表绑定到dataGridView1的数据源
-                this.dataGridView1.DataSource = dataTable;
+                //将数据集合的首张表绑定到skinDataGridView1的数据源
+                this.skinDataGridView1.DataSource = dataTable;
             }
             //添加一列按钮，按钮的行数取决于DataGridView的行数
             DataGridViewButtonColumn col_Btn = new DataGridViewButtonColumn();
             col_Btn.Name = "btnOpenCourse";                            //列名
             col_Btn.HeaderText = "操作";                        //该列表头所显示的文字
             col_Btn.DefaultCellStyle.NullValue = "开班";        //按钮上显示的文字
-            this.dataGridView1.Columns.Add(col_Btn);            //添加列
+            this.skinDataGridView1.Columns.Add(col_Btn);            //添加列
         }
         /// <summary>
         /// 点击单元格事件
@@ -64,12 +65,12 @@ namespace 教务管理系统.窗体
         /// <param name="e"></param>
         private void DataGridViewCellContent_Click(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btnOpenCourse")
+            if (skinDataGridView1.Columns[e.ColumnIndex].Name == "btnOpenCourse")
             {//判断列名，点击的列是DataGridViewButtonColumn列
 
 
-                int courseId = (int)dataGridView1.Rows[e.RowIndex].Cells[1].Value;
-                int pickedCount = (int)dataGridView1.Rows[e.RowIndex].Cells[4].Value;
+                int courseId = (int)skinDataGridView1.Rows[e.RowIndex].Cells[1].Value;
+                int pickedCount = (int)skinDataGridView1.Rows[e.RowIndex].Cells[4].Value;
                 if (pickedCount == 0)
                 {
                     MessageBox.Show("开班失败！没有学生选择该课程！");

@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TX.Framework.WindowUI.Forms;
 using 教务管理系统.BEAN;
 using 教务管理系统.DAO;
 using 教务管理系统.窗体;
 
 namespace 教务管理系统.界面
 {
-    public partial class HomeForm : Form
+    public partial class HomeForm : MainForm
     {
         /// <summary>
         /// 在OnActivated事件中为输入框获取焦点
@@ -22,7 +23,7 @@ namespace 教务管理系统.界面
         protected override void OnActivated(EventArgs e)
         {
             base.OnActivated(e);
-            textBox1.Focus();
+            txTextBox1.Focus();
         }
         public HomeForm()
         {
@@ -37,7 +38,7 @@ namespace 教务管理系统.界面
         private void Btn_stuLogin_Click(object sender, EventArgs e)
         {
             //学号检查
-            StudentBean student = new StudentDao().FindBySCode(textBox1.Text);
+            StudentBean student = new StudentDao().FindBySCode(txTextBox1.Text);
             if (student != null)
             {
                 new StudentHomeForm(student,this).Show();
@@ -45,7 +46,7 @@ namespace 教务管理系统.界面
             }
             else
             {
-                MessageBox.Show("错误！不存在此学号");
+                this.Error("错误！不存在此学号");
             }
 
         }
@@ -58,7 +59,7 @@ namespace 教务管理系统.界面
         private void Btn_teacherLogin_Click(object sender, EventArgs e)
         {
             //教师工号
-            TeacherBean teacher = new TeacherDao().FindByTCode(textBox1.Text);
+            TeacherBean teacher = new TeacherDao().FindByTCode(txTextBox2.Text);
             if (teacher != null)
             {
                 new TeacherHome(teacher,this).Show();
@@ -66,7 +67,7 @@ namespace 教务管理系统.界面
             }
             else
             {
-                MessageBox.Show("错误！不存在此教师工号");
+                this.Error("错误！不存在此教师工号");
             }
         }
     }

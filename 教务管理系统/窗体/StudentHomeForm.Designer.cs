@@ -28,156 +28,177 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_preSelect = new System.Windows.Forms.Button();
-            this.btn_formalSelect = new System.Windows.Forms.Button();
-            this.dgv_allCourse = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgv_myPlanCourse = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_allCourse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_myPlanCourse)).BeginInit();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
+            this.skinLabel3 = new CCWin.SkinControl.SkinLabel();
+            this.skinDataGridView1 = new CCWin.SkinControl.SkinDataGridView();
+            this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
+            this.skinComboBox1 = new CCWin.SkinControl.SkinComboBox();
+            this.gifBox1 = new CCWin.SkinControl.GifBox();
+            ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_preSelect
+            // skinLabel1
             // 
-            this.btn_preSelect.Location = new System.Drawing.Point(92, 99);
-            this.btn_preSelect.Name = "btn_preSelect";
-            this.btn_preSelect.Size = new System.Drawing.Size(75, 23);
-            this.btn_preSelect.TabIndex = 0;
-            this.btn_preSelect.Text = "预选课";
-            this.btn_preSelect.UseVisualStyleBackColor = true;
-            this.btn_preSelect.Click += new System.EventHandler(this.Btn_preSelect_Click);
+            this.skinLabel1.AutoSize = true;
+            this.skinLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel1.BorderColor = System.Drawing.Color.White;
+            this.skinLabel1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel1.Location = new System.Drawing.Point(165, 53);
+            this.skinLabel1.Name = "skinLabel1";
+            this.skinLabel1.Size = new System.Drawing.Size(64, 17);
+            this.skinLabel1.TabIndex = 10;
+            this.skinLabel1.Text = "[基本信息]";
             // 
-            // btn_formalSelect
+            // skinLabel2
             // 
-            this.btn_formalSelect.Location = new System.Drawing.Point(236, 99);
-            this.btn_formalSelect.Name = "btn_formalSelect";
-            this.btn_formalSelect.Size = new System.Drawing.Size(75, 23);
-            this.btn_formalSelect.TabIndex = 1;
-            this.btn_formalSelect.Text = "正式选课";
-            this.btn_formalSelect.UseVisualStyleBackColor = true;
-            this.btn_formalSelect.Click += new System.EventHandler(this.Btn_formalSelect_Click);
+            this.skinLabel2.AutoSize = true;
+            this.skinLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel2.BorderColor = System.Drawing.Color.White;
+            this.skinLabel2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel2.Location = new System.Drawing.Point(165, 96);
+            this.skinLabel2.Name = "skinLabel2";
+            this.skinLabel2.Size = new System.Drawing.Size(64, 17);
+            this.skinLabel2.TabIndex = 11;
+            this.skinLabel2.Text = "[班级专业]";
             // 
-            // dgv_allCourse
+            // skinLabel3
             // 
-            this.dgv_allCourse.AllowUserToAddRows = false;
-            this.dgv_allCourse.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_allCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_allCourse.Location = new System.Drawing.Point(15, 177);
-            this.dgv_allCourse.Name = "dgv_allCourse";
-            this.dgv_allCourse.RowHeadersVisible = false;
-            this.dgv_allCourse.RowTemplate.Height = 23;
-            this.dgv_allCourse.Size = new System.Drawing.Size(837, 149);
-            this.dgv_allCourse.TabIndex = 2;
-            this.dgv_allCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContent_Click);
+            this.skinLabel3.AutoSize = true;
+            this.skinLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.skinLabel3.BorderColor = System.Drawing.Color.White;
+            this.skinLabel3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinLabel3.Location = new System.Drawing.Point(165, 144);
+            this.skinLabel3.Name = "skinLabel3";
+            this.skinLabel3.Size = new System.Drawing.Size(64, 17);
+            this.skinLabel3.TabIndex = 12;
+            this.skinLabel3.Text = "[培养方案]";
             // 
-            // label1
+            // skinDataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "[基本信息]";
+            this.skinDataGridView1.AllowUserToAddRows = false;
+            this.skinDataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.skinDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.skinDataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.skinDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.skinDataGridView1.ColumnFont = null;
+            this.skinDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.skinDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.skinDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.skinDataGridView1.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.skinDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.skinDataGridView1.EnableHeadersVisualStyles = false;
+            this.skinDataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.skinDataGridView1.HeadFont = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinDataGridView1.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
+            this.skinDataGridView1.Location = new System.Drawing.Point(24, 285);
+            this.skinDataGridView1.Name = "skinDataGridView1";
+            this.skinDataGridView1.ReadOnly = true;
+            this.skinDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.skinDataGridView1.RowHeadersVisible = false;
+            this.skinDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.skinDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.skinDataGridView1.RowTemplate.Height = 23;
+            this.skinDataGridView1.Size = new System.Drawing.Size(922, 302);
+            this.skinDataGridView1.TabIndex = 14;
+            this.skinDataGridView1.TitleBack = null;
+            this.skinDataGridView1.TitleBackColorBegin = System.Drawing.Color.White;
+            this.skinDataGridView1.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
+            this.skinDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewCellContent_Click);
             // 
-            // label2
+            // txButton1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(191, 12);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "可预选的课程列表(2019年第3学期)";
+            this.txButton1.Image = null;
+            this.txButton1.Location = new System.Drawing.Point(899, 15);
+            this.txButton1.Name = "txButton1";
+            this.txButton1.Size = new System.Drawing.Size(80, 28);
+            this.txButton1.TabIndex = 15;
+            this.txButton1.Text = "退出登录";
+            this.txButton1.UseVisualStyleBackColor = true;
+            this.txButton1.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // label3
+            // skinComboBox1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 358);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "我已选的预选课程";
+            this.skinComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.skinComboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skinComboBox1.FormattingEnabled = true;
+            this.skinComboBox1.Items.AddRange(new object[] {
+            "预选：所有可预选的课程",
+            "预选：我已预选的课程",
+            "正选：所有可正选的课程",
+            "正选：我已正选的课程"});
+            this.skinComboBox1.Location = new System.Drawing.Point(24, 252);
+            this.skinComboBox1.Name = "skinComboBox1";
+            this.skinComboBox1.Size = new System.Drawing.Size(230, 27);
+            this.skinComboBox1.TabIndex = 16;
+            this.skinComboBox1.Text = "请选择";
+            this.skinComboBox1.WaterText = "";
+            this.skinComboBox1.SelectedIndexChanged += new System.EventHandler(this.ComBox_SelectedIndexChanged);
             // 
-            // dgv_myPlanCourse
+            // gifBox1
             // 
-            this.dgv_myPlanCourse.AllowUserToAddRows = false;
-            this.dgv_myPlanCourse.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_myPlanCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_myPlanCourse.Location = new System.Drawing.Point(15, 383);
-            this.dgv_myPlanCourse.Name = "dgv_myPlanCourse";
-            this.dgv_myPlanCourse.RowHeadersVisible = false;
-            this.dgv_myPlanCourse.RowTemplate.Height = 23;
-            this.dgv_myPlanCourse.Size = new System.Drawing.Size(837, 251);
-            this.dgv_myPlanCourse.TabIndex = 6;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(813, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "注销";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "[专业信息]";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 71);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(65, 12);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "[培养方案]";
+            this.gifBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.gifBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.gifBox1.Image = global::教务管理系统.Properties.Resources.student;
+            this.gifBox1.Location = new System.Drawing.Point(24, 53);
+            this.gifBox1.Name = "gifBox1";
+            this.gifBox1.Size = new System.Drawing.Size(118, 130);
+            this.gifBox1.TabIndex = 17;
+            this.gifBox1.Text = "gifBox1";
             // 
             // StudentHomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 667);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dgv_myPlanCourse);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dgv_allCourse);
-            this.Controls.Add(this.btn_formalSelect);
-            this.Controls.Add(this.btn_preSelect);
+            this.ClientSize = new System.Drawing.Size(999, 652);
+            this.Controls.Add(this.gifBox1);
+            this.Controls.Add(this.skinComboBox1);
+            this.Controls.Add(this.txButton1);
+            this.Controls.Add(this.skinDataGridView1);
+            this.Controls.Add(this.skinLabel3);
+            this.Controls.Add(this.skinLabel2);
+            this.Controls.Add(this.skinLabel1);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "StudentHomeForm";
-            this.Text = "SelectCourse";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_allCourse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_myPlanCourse)).EndInit();
+            this.Text = "学生主页";
+            ((System.ComponentModel.ISupportInitialize)(this.skinDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_preSelect;
-        private System.Windows.Forms.Button btn_formalSelect;
-        private System.Windows.Forms.DataGridView dgv_allCourse;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dgv_myPlanCourse;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private CCWin.SkinControl.SkinLabel skinLabel1;
+        private CCWin.SkinControl.SkinLabel skinLabel2;
+        private CCWin.SkinControl.SkinLabel skinLabel3;
+        private CCWin.SkinControl.SkinDataGridView skinDataGridView1;
+        private TX.Framework.WindowUI.Controls.TXButton txButton1;
+        private CCWin.SkinControl.SkinComboBox skinComboBox1;
+        private CCWin.SkinControl.GifBox gifBox1;
     }
 }

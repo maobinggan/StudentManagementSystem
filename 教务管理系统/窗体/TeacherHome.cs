@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCWin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TX.Framework.WindowUI.Forms;
 using 教务管理系统.BEAN;
 using 教务管理系统.DAO;
 
 namespace 教务管理系统.窗体
 {
-    public partial class TeacherHome : Form
+    public partial class TeacherHome : Skin_Mac
     {
         /// <summary>
         /// 当前登录的教师信息
@@ -35,7 +37,8 @@ namespace 教务管理系统.窗体
             this.ControlBox = false;   // 设置不出现关闭按钮
             this.teacher = teacher;
             this.preForm = preForm;
-            label1.Text = "[当前教师登录] 姓名:" + teacher.Name + " 教工编号:" + teacher.TCode;
+            skinLabel1.Text = "[姓名] " + teacher.Name ;
+            skinLabel2.Text ="[教工编号] "+ teacher.TCode;
         }
 
         /// <summary>

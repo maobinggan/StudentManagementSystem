@@ -28,70 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_stuLogin = new System.Windows.Forms.Button();
-            this.btn_teacherLogin = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
+            this.txTextBox1 = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.txTextBox2 = new TX.Framework.WindowUI.Controls.TXTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.skinButton1 = new CCWin.SkinControl.SkinButton();
+            this.skinButton2 = new CCWin.SkinControl.SkinButton();
             this.SuspendLayout();
-            // 
-            // btn_stuLogin
-            // 
-            this.btn_stuLogin.Location = new System.Drawing.Point(147, 151);
-            this.btn_stuLogin.Name = "btn_stuLogin";
-            this.btn_stuLogin.Size = new System.Drawing.Size(75, 23);
-            this.btn_stuLogin.TabIndex = 0;
-            this.btn_stuLogin.Text = "学生登录";
-            this.btn_stuLogin.UseVisualStyleBackColor = true;
-            this.btn_stuLogin.Click += new System.EventHandler(this.Btn_stuLogin_Click);
-            // 
-            // btn_teacherLogin
-            // 
-            this.btn_teacherLogin.Location = new System.Drawing.Point(268, 151);
-            this.btn_teacherLogin.Name = "btn_teacherLogin";
-            this.btn_teacherLogin.Size = new System.Drawing.Size(75, 23);
-            this.btn_teacherLogin.TabIndex = 1;
-            this.btn_teacherLogin.Text = "教师登录";
-            this.btn_teacherLogin.UseVisualStyleBackColor = true;
-            this.btn_teacherLogin.Click += new System.EventHandler(this.Btn_teacherLogin_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(243, 84);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(145, 87);
+            this.label1.Location = new System.Drawing.Point(77, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 12);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 3;
-            this.label1.Text = "学号/教师工号：";
+            this.label1.Text = "学号：";
+            // 
+            // txTextBox1
+            // 
+            this.txTextBox1.BackColor = System.Drawing.Color.Transparent;
+            this.txTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.txTextBox1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txTextBox1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txTextBox1.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.txTextBox1.Image = null;
+            this.txTextBox1.ImageSize = new System.Drawing.Size(0, 0);
+            this.txTextBox1.Location = new System.Drawing.Point(124, 78);
+            this.txTextBox1.Name = "txTextBox1";
+            this.txTextBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.txTextBox1.PasswordChar = '\0';
+            this.txTextBox1.Required = false;
+            this.txTextBox1.Size = new System.Drawing.Size(180, 22);
+            this.txTextBox1.TabIndex = 5;
+            // 
+            // txTextBox2
+            // 
+            this.txTextBox2.BackColor = System.Drawing.Color.Transparent;
+            this.txTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(168)))), ((int)(((byte)(192)))));
+            this.txTextBox2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.txTextBox2.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txTextBox2.HeightLightBolorColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(67)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.txTextBox2.Image = null;
+            this.txTextBox2.ImageSize = new System.Drawing.Size(0, 0);
+            this.txTextBox2.Location = new System.Drawing.Point(124, 197);
+            this.txTextBox2.Name = "txTextBox2";
+            this.txTextBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.txTextBox2.PasswordChar = '\0';
+            this.txTextBox2.Required = false;
+            this.txTextBox2.Size = new System.Drawing.Size(180, 22);
+            this.txTextBox2.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(65, 202);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "教师号：";
+            // 
+            // skinButton1
+            // 
+            this.skinButton1.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton1.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton1.DownBack = null;
+            this.skinButton1.Location = new System.Drawing.Point(323, 77);
+            this.skinButton1.MouseBack = null;
+            this.skinButton1.Name = "skinButton1";
+            this.skinButton1.NormlBack = null;
+            this.skinButton1.Size = new System.Drawing.Size(75, 23);
+            this.skinButton1.TabIndex = 9;
+            this.skinButton1.Text = "学生登录";
+            this.skinButton1.UseVisualStyleBackColor = false;
+            this.skinButton1.Click += new System.EventHandler(this.Btn_stuLogin_Click);
+            // 
+            // skinButton2
+            // 
+            this.skinButton2.BackColor = System.Drawing.Color.Transparent;
+            this.skinButton2.ControlState = CCWin.SkinClass.ControlState.Normal;
+            this.skinButton2.DownBack = null;
+            this.skinButton2.Location = new System.Drawing.Point(323, 196);
+            this.skinButton2.MouseBack = null;
+            this.skinButton2.Name = "skinButton2";
+            this.skinButton2.NormlBack = null;
+            this.skinButton2.Size = new System.Drawing.Size(75, 23);
+            this.skinButton2.TabIndex = 10;
+            this.skinButton2.Text = "教师登录";
+            this.skinButton2.UseVisualStyleBackColor = false;
+            this.skinButton2.Click += new System.EventHandler(this.Btn_teacherLogin_Click);
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 283);
+            this.ClientSize = new System.Drawing.Size(491, 302);
+            this.Controls.Add(this.skinButton2);
+            this.Controls.Add(this.skinButton1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txTextBox2);
+            this.Controls.Add(this.txTextBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btn_teacherLogin);
-            this.Controls.Add(this.btn_stuLogin);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Location = new System.Drawing.Point(0, 0);
             this.Name = "HomeForm";
-            this.Text = "Form1";
+            this.Text = "登录";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_stuLogin;
-        private System.Windows.Forms.Button btn_teacherLogin;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox1;
+        private TX.Framework.WindowUI.Controls.TXTextBox txTextBox2;
+        private System.Windows.Forms.Label label2;
+        private CCWin.SkinControl.SkinButton skinButton1;
+        private CCWin.SkinControl.SkinButton skinButton2;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCWin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using 教务管理系统.DAO;
 
 namespace 教务管理系统.窗体
 {
-    public partial class InputScoreForm : Form
+    public partial class InputScoreForm : Skin_Mac
     {
         public TeacherBean teacher = null;
         public InputScoreForm(TeacherBean teacherBean)
@@ -33,14 +34,14 @@ namespace 教务管理系统.窗体
             if (dataTable != null)
             {
                 //将数据集合的首张表绑定到dataGridView2的数据源
-                this.dataGridView1.DataSource = dataTable;
+                this.skinDataGridView1.DataSource = dataTable;
             }
             //添加一列按钮，按钮的行数取决于DataGridView的行数
             DataGridViewButtonColumn col_Btn = new DataGridViewButtonColumn();
             col_Btn.Name = "btnChooseCourse";                  //列名
             col_Btn.HeaderText = "操作";                       //该列表头所显示的文字
             col_Btn.DefaultCellStyle.NullValue = "选择此班级";  //按钮上显示的文字
-            this.dataGridView1.Columns.Add(col_Btn);          //添加列
+            this.skinDataGridView1.Columns.Add(col_Btn);          //添加列
         }
 
         /// <summary>
@@ -50,9 +51,9 @@ namespace 教务管理系统.窗体
         /// <param name="e"></param>
         private void DataGridViewCellContent_Click(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Columns[e.ColumnIndex].Name == "btnChooseCourse")
+            if (skinDataGridView1.Columns[e.ColumnIndex].Name == "btnChooseCourse")
             {
-                int courseClassId = (int)dataGridView1.Rows[e.RowIndex].Cells[1].Value;
+                int courseClassId = (int)skinDataGridView1.Rows[e.RowIndex].Cells[1].Value;
                 CourseClassBean courseClass = new CourseClassDao().FindById(new CourseClassBean(courseClassId));
                 if (courseClass != null)
                 {

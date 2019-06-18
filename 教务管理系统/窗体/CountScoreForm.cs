@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCWin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ using 教务管理系统.DAO;
 
 namespace 教务管理系统.窗体
 {
-    public partial class CountScoreForm : Form
+    public partial class CountScoreForm : Skin_Mac
     {
         public CourseClassBean CourseClass = null;
         public CountScoreForm(CourseClassBean CourseClass)
@@ -95,13 +96,6 @@ namespace 教务管理系统.窗体
                 //将数据集合的首张表绑定到dataGridView1的数据源
                 this.dataGridView1.DataSource = dataTable;
             }
-
-            ////添加一列按钮，按钮的行数取决于DataGridView的行数
-            //DataGridViewButtonColumn col_Btn = new DataGridViewButtonColumn();
-            //col_Btn.Name = "btnInput";                 //列名
-            //col_Btn.HeaderText = "操作";                      //该列表头所显示的文字
-            //col_Btn.DefaultCellStyle.NullValue = "录入成绩";  //按钮上显示的文字
-            //this.dataGridView1.Columns.Add(col_Btn);          //添加列
         }
 
 

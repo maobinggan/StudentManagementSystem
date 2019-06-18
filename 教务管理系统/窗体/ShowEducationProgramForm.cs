@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CCWin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using 教务管理系统.DAO;
 
 namespace 教务管理系统.窗体
 {
-    public partial class ShowEducationProgramForm : Form
+    public partial class ShowEducationProgramForm : Skin_Mac
     {
         public ShowEducationProgramForm()
         {
