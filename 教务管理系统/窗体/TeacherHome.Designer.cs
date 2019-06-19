@@ -30,24 +30,58 @@ namespace 教务管理系统.窗体
         /// </summary>
         private void InitializeComponent()
         {
+            this.btn_openCourse = new TX.Framework.WindowUI.Controls.TXButton();
+            this.btn_inputScore = new TX.Framework.WindowUI.Controls.TXButton();
             this.button1 = new TX.Framework.WindowUI.Controls.TXButton();
+            this.btn_showAllStu = new TX.Framework.WindowUI.Controls.TXButton();
             this.gifBox1 = new CCWin.SkinControl.GifBox();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
-            this.skinComboBox1 = new CCWin.SkinControl.SkinComboBox();
-            this.txButton1 = new TX.Framework.WindowUI.Controls.TXButton();
             this.SuspendLayout();
+            // 
+            // btn_openCourse
+            // 
+            this.btn_openCourse.Image = null;
+            this.btn_openCourse.Location = new System.Drawing.Point(170, 67);
+            this.btn_openCourse.Name = "btn_openCourse";
+            this.btn_openCourse.Size = new System.Drawing.Size(179, 23);
+            this.btn_openCourse.TabIndex = 0;
+            this.btn_openCourse.Text = "根据预选课情况进行开班";
+            this.btn_openCourse.UseVisualStyleBackColor = true;
+            this.btn_openCourse.Click += new System.EventHandler(this.Btn_openCourse_Click);
+            // 
+            // btn_inputScore
+            // 
+            this.btn_inputScore.Image = null;
+            this.btn_inputScore.Location = new System.Drawing.Point(170, 115);
+            this.btn_inputScore.Name = "btn_inputScore";
+            this.btn_inputScore.Size = new System.Drawing.Size(179, 23);
+            this.btn_inputScore.TabIndex = 2;
+            this.btn_inputScore.Text = "录入/统计成绩";
+            this.btn_inputScore.UseVisualStyleBackColor = true;
+            this.btn_inputScore.Click += new System.EventHandler(this.btn_inputScore_Click);
             // 
             // button1
             // 
             this.button1.Image = null;
-            this.button1.Location = new System.Drawing.Point(347, 1);
+            this.button1.Location = new System.Drawing.Point(365, 1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(65, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "注销";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // btn_showAllStu
+            // 
+            this.btn_showAllStu.Image = null;
+            this.btn_showAllStu.Location = new System.Drawing.Point(170, 162);
+            this.btn_showAllStu.Name = "btn_showAllStu";
+            this.btn_showAllStu.Size = new System.Drawing.Size(179, 23);
+            this.btn_showAllStu.TabIndex = 4;
+            this.btn_showAllStu.Text = "查看所有本科人才的培养方案";
+            this.btn_showAllStu.UseVisualStyleBackColor = true;
+            this.btn_showAllStu.Click += new System.EventHandler(this.Btn_showAllStu_Click);
             // 
             // gifBox1
             // 
@@ -84,44 +118,19 @@ namespace 教务管理系统.窗体
             this.skinLabel2.TabIndex = 7;
             this.skinLabel2.Text = "skinLabel2";
             // 
-            // skinComboBox1
-            // 
-            this.skinComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.skinComboBox1.FormattingEnabled = true;
-            this.skinComboBox1.Items.AddRange(new object[] {
-            "开班",
-            "录入/统计成绩",
-            "查看学生培养方案"});
-            this.skinComboBox1.Location = new System.Drawing.Point(134, 74);
-            this.skinComboBox1.Name = "skinComboBox1";
-            this.skinComboBox1.Size = new System.Drawing.Size(121, 22);
-            this.skinComboBox1.TabIndex = 8;
-            this.skinComboBox1.Text = "请选择";
-            this.skinComboBox1.WaterText = "";
-            // 
-            // txButton1
-            // 
-            this.txButton1.Image = null;
-            this.txButton1.Location = new System.Drawing.Point(281, 74);
-            this.txButton1.Name = "txButton1";
-            this.txButton1.Size = new System.Drawing.Size(76, 23);
-            this.txButton1.TabIndex = 9;
-            this.txButton1.Text = "确定";
-            this.txButton1.UseVisualStyleBackColor = true;
-            this.txButton1.Click += new System.EventHandler(this.TxButton1_Click);
-            // 
             // TeacherHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(419, 221);
-            this.Controls.Add(this.txButton1);
-            this.Controls.Add(this.skinComboBox1);
+            this.ClientSize = new System.Drawing.Size(435, 222);
             this.Controls.Add(this.skinLabel2);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.gifBox1);
+            this.Controls.Add(this.btn_showAllStu);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_inputScore);
+            this.Controls.Add(this.btn_openCourse);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "TeacherHome";
             this.Text = "教师主页";
@@ -131,11 +140,13 @@ namespace 教务管理系统.窗体
         }
 
         #endregion
+        
+        private TXButton btn_openCourse;
+        private TXButton btn_inputScore;
         private TXButton button1;
+        private TXButton btn_showAllStu;
         private CCWin.SkinControl.GifBox gifBox1;
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinLabel skinLabel2;
-        private CCWin.SkinControl.SkinComboBox skinComboBox1;
-        private TXButton txButton1;
     }
 }
