@@ -40,37 +40,6 @@ namespace 教务管理系统.窗体
             skinLabel1.Text = "[姓名] " + teacher.Name ;
             skinLabel2.Text ="[教工编号] "+ teacher.TCode;
         }
-
-        /// <summary>
-        /// 进入开班界面
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_openCourse_Click(object sender, EventArgs e)
-        {
-            new OpenCourseForm(this.teacher).Show();
-        }
-
-        /// <summary>
-        /// 点击进入成绩录入界面
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btn_inputScore_Click(object sender, EventArgs e)
-        {
-            new InputScoreForm(this.teacher).Show();
-        }
-
-        /// <summary>
-        /// 点击进入查看所有学生信息窗体
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Btn_showAllStu_Click(object sender, EventArgs e)
-        {
-            new ShowEducationProgramForm().Show();
-        }
-
         /// <summary>
         /// 注销登录
         /// </summary>
@@ -80,6 +49,27 @@ namespace 教务管理系统.窗体
         {
             this.preForm.Show();
             this.Close();
+        }
+
+        /// <summary>
+        /// 点击确定按钮
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxButton1_Click(object sender, EventArgs e)
+        {
+            if (skinComboBox1.Text.Equals("开班"))
+            {
+                new OpenCourseForm(this.teacher).Show();
+            }
+            if (skinComboBox1.Text.Equals("录入/统计成绩"))
+            {
+                new InputScoreForm(this.teacher).Show();
+            }
+            if (skinComboBox1.Text.Equals("查看学生培养方案"))
+            {
+                new ShowEducationProgramForm().Show();
+            }
         }
     }
 }
