@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="BEAN\ClassBean.cs" />
     <Compile Include="BEAN\ClassStudentBean.cs" />
+    <Compile Include="BEAN\CourseBean.cs" />
     <Compile Include="BEAN\CourseClassBean.cs" />
     <Compile Include="BEAN\EducationProgramBean.cs" />
     <Compile Include="BEAN\MajorBean.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="DAO\ClassDao.cs" />
     <Compile Include="DAO\ClassStudentDao.cs" />
     <Compile Include="DAO\CourseClassDao.cs" />
+    <Compile Include="DAO\CourseDao.cs" />
     <Compile Include="DAO\EducationProgramDao.cs" />
     <Compile Include="DAO\MajorDao.cs" />
     <Compile Include="DAO\PlanStudyCourseDao.cs" />

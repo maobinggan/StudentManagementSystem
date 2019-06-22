@@ -1,4 +1,4 @@
-﻿namespace 教务管理系统.界面
+﻿namespace 教务管理系统.窗体
 {
     partial class StudentHomeForm
     {
@@ -13,8 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
-            {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);

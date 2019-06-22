@@ -12,7 +12,7 @@ using 教务管理系统.BEAN;
 using 教务管理系统.DAO;
 using 教务管理系统.窗体;
 
-namespace 教务管理系统.界面
+namespace 教务管理系统.窗体
 {
     public partial class HomeForm : MainForm
     {

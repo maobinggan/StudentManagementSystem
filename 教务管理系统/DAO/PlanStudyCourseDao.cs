@@ -33,14 +33,12 @@ namespace 教务管理系统.DAO
                 cmd.ExecuteNonQuery();
                 return true;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Console.WriteLine(ex.Message.ToString());
                 MessageBox.Show(ex.Message.ToString());
                 return false;
             }
-            finally
-            {
+            finally {
                 //关闭连接
                 conn.Close();
                 conn.Dispose();
@@ -48,11 +46,15 @@ namespace 教务管理系统.DAO
 
         }
 
+        /// <summary>
+        /// 查：根据ID
+        /// </summary>
+        /// <param name="bean"></param>
+        /// <returns></returns>
         public override PlanStudyCourseBean FindById(PlanStudyCourseBean bean)
         {
             PlanStudyCourseBean planStudyCourse = null;
-            try
-            {
+            try {
                 //连接数据库
                 conn = new SqlConnection(connStr); //数据库连接对象
                 conn.Open();
@@ -68,14 +70,12 @@ namespace 教务管理系统.DAO
                 planStudyCourse = ConvertToModel(dt);
                 return planStudyCourse;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Console.WriteLine(ex.Message.ToString());
                 //MessageBox.Show(ex.Message.ToString());
                 return planStudyCourse;
             }
-            finally
-            {
+            finally {
                 //关闭连接
                 conn.Close();
                 conn.Dispose();
@@ -90,8 +90,7 @@ namespace 教务管理系统.DAO
         public PlanStudyCourseBean FindByStuId_CourId_SemsId(PlanStudyCourseBean bean)
         {
             PlanStudyCourseBean planStudyCourse = null;
-            try
-            {
+            try {
                 //连接数据库
                 conn = new SqlConnection(connStr); //数据库连接对象
                 conn.Open();
@@ -109,19 +108,47 @@ namespace 教务管理系统.DAO
                 planStudyCourse = ConvertToModel(dt);
                 return planStudyCourse;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Console.WriteLine(ex.Message.ToString());
                 //MessageBox.Show(ex.Message.ToString());
                 return planStudyCourse;
             }
-            finally
-            {
+            finally {
                 //关闭连接
                 conn.Close();
                 conn.Dispose();
             }
 
+        }
+
+        /// <summary>
+        /// 删：根据ID
+        /// </summary>
+        /// <param name="bean"></param>
+        public bool DeleteById(PlanStudyCourseBean bean)
+        {
+            try {
+                //连接数据库
+                conn = new SqlConnection(connStr); //数据库连接对象
+                conn.Open();
+                //SQL
+                String sqlStr = "DELETE  FROM [plan_study_course] WHERE id=@id";
+                SqlCommand cmd = new SqlCommand(sqlStr, conn);
+                cmd.Parameters.AddWithValue("@id", bean.Id);
+                //DataTable dt = new DataTable();
+                //new SqlDataAdapter(cmd).Fill(dt);
+                cmd.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message.ToString());
+                return false;
+            }
+            finally {
+                //关闭连接
+                conn.Close();
+                conn.Dispose();
+            }
         }
     }
 }

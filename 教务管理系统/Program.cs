@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 教务管理系统.界面
+namespace 教务管理系统.窗体
 {
     static class Program
     {
