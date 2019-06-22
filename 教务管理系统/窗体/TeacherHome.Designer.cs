@@ -33,7 +33,6 @@ namespace 教务管理系统.窗体
             this.btn_openCourse = new TX.Framework.WindowUI.Controls.TXButton();
             this.btn_inputScore = new TX.Framework.WindowUI.Controls.TXButton();
             this.button1 = new TX.Framework.WindowUI.Controls.TXButton();
-            this.btn_showAllStu = new TX.Framework.WindowUI.Controls.TXButton();
             this.gifBox1 = new CCWin.SkinControl.GifBox();
             this.skinLabel1 = new CCWin.SkinControl.SkinLabel();
             this.skinLabel2 = new CCWin.SkinControl.SkinLabel();
@@ -42,7 +41,7 @@ namespace 教务管理系统.窗体
             // btn_openCourse
             // 
             this.btn_openCourse.Image = null;
-            this.btn_openCourse.Location = new System.Drawing.Point(170, 67);
+            this.btn_openCourse.Location = new System.Drawing.Point(170, 78);
             this.btn_openCourse.Name = "btn_openCourse";
             this.btn_openCourse.Size = new System.Drawing.Size(179, 23);
             this.btn_openCourse.TabIndex = 0;
@@ -53,7 +52,7 @@ namespace 教务管理系统.窗体
             // btn_inputScore
             // 
             this.btn_inputScore.Image = null;
-            this.btn_inputScore.Location = new System.Drawing.Point(170, 115);
+            this.btn_inputScore.Location = new System.Drawing.Point(170, 147);
             this.btn_inputScore.Name = "btn_inputScore";
             this.btn_inputScore.Size = new System.Drawing.Size(179, 23);
             this.btn_inputScore.TabIndex = 2;
@@ -71,17 +70,6 @@ namespace 教务管理系统.窗体
             this.button1.Text = "注销";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // btn_showAllStu
-            // 
-            this.btn_showAllStu.Image = null;
-            this.btn_showAllStu.Location = new System.Drawing.Point(170, 162);
-            this.btn_showAllStu.Name = "btn_showAllStu";
-            this.btn_showAllStu.Size = new System.Drawing.Size(179, 23);
-            this.btn_showAllStu.TabIndex = 4;
-            this.btn_showAllStu.Text = "查看所有本科人才的培养方案";
-            this.btn_showAllStu.UseVisualStyleBackColor = true;
-            this.btn_showAllStu.Click += new System.EventHandler(this.Btn_showAllStu_Click);
             // 
             // gifBox1
             // 
@@ -127,7 +115,6 @@ namespace 教务管理系统.窗体
             this.Controls.Add(this.skinLabel2);
             this.Controls.Add(this.skinLabel1);
             this.Controls.Add(this.gifBox1);
-            this.Controls.Add(this.btn_showAllStu);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_inputScore);
             this.Controls.Add(this.btn_openCourse);
@@ -144,7 +131,6 @@ namespace 教务管理系统.窗体
         private TXButton btn_openCourse;
         private TXButton btn_inputScore;
         private TXButton button1;
-        private TXButton btn_showAllStu;
         private CCWin.SkinControl.GifBox gifBox1;
         private CCWin.SkinControl.SkinLabel skinLabel1;
         private CCWin.SkinControl.SkinLabel skinLabel2;
