@@ -64,25 +64,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ClassBean.cs" />
-    <Compile Include="Model\ClassStudentBean.cs" />
-    <Compile Include="Model\CourseBean.cs" />
-    <Compile Include="Model\CourseClassBean.cs" />
-    <Compile Include="Model\EducationProgramBean.cs" />
-    <Compile Include="Model\MajorBean.cs" />
-    <Compile Include="Model\PlanStudyCourseBean.cs" />
-    <Compile Include="Model\StudentBean.cs" />
-    <Compile Include="Model\TeacherBean.cs" />
-    <Compile Include="DAL\BaseDao.cs" />
-    <Compile Include="DAL\ClassDao.cs" />
-    <Compile Include="DAL\ClassStudentDao.cs" />
-    <Compile Include="DAL\CourseClassDao.cs" />
-    <Compile Include="DAL\CourseDao.cs" />
-    <Compile Include="DAL\EducationProgramDao.cs" />
-    <Compile Include="DAL\MajorDao.cs" />
-    <Compile Include="DAL\PlanStudyCourseDao.cs" />
-    <Compile Include="DAL\StudentDao.cs" />
-    <Compile Include="DAL\TeacherDao.cs" />
+    <Compile Include="BEAN\ClassBean.cs" />
+    <Compile Include="BEAN\ClassStudentBean.cs" />
+    <Compile Include="BEAN\CourseBean.cs" />
+    <Compile Include="BEAN\CourseClassBean.cs" />
+    <Compile Include="BEAN\EducationProgramBean.cs" />
+    <Compile Include="BEAN\MajorBean.cs" />
+    <Compile Include="BEAN\PlanStudyCourseBean.cs" />
+    <Compile Include="BEAN\StudentBean.cs" />
+    <Compile Include="BEAN\TeacherBean.cs" />
+    <Compile Include="DAO\BaseDao.cs" />
+    <Compile Include="DAO\ClassDao.cs" />
+    <Compile Include="DAO\ClassStudentDao.cs" />
+    <Compile Include="DAO\CourseClassDao.cs" />
+    <Compile Include="DAO\CourseDao.cs" />
+    <Compile Include="DAO\EducationProgramDao.cs" />
+    <Compile Include="DAO\MajorDao.cs" />
+    <Compile Include="DAO\PlanStudyCourseDao.cs" />
+    <Compile Include="DAO\StudentDao.cs" />
+    <Compile Include="DAO\TeacherDao.cs" />
     <Compile Include="窗体\CountScoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
